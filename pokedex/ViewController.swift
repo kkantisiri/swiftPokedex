@@ -13,15 +13,30 @@ class ViewController: UIViewController {
     
     @IBOutlet var pokemonImage:UIImageView!
     @IBOutlet var searchBar:UITextField!
+    var responseJSON: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: "imageTapped:")
+        pokemonImage.addGestureRecognizer(tapGesture)
+        pokemonImage.isUserInteractionEnabled = true
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func imageTapped(gestureRecognizer: UIGestureRecognizer){
+        performSegue(withIdentifier: "detailSegue", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailsViewController {
+            vc.data = responseJSON
+        }
     }
     
     @IBAction func searchPokemon(){
@@ -36,12 +51,11 @@ class ViewController: UIViewController {
                 return
             }
             
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String:Any]{
+            self.responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = self.responseJSON as? [String:Any]{
                // print("\(responseJSON) is a cool pokemon")
                 if let species = responseJSON["species"] as? [String:Any] {
                     print(species["name"])
-                    
                 }
                 if let sprites = responseJSON["sprites"] as? [String:Any]
                 {
@@ -63,8 +77,6 @@ class ViewController: UIViewController {
             
         }
         task.resume()
-        
-        
     }
 }
 

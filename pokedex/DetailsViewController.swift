@@ -22,14 +22,15 @@ class DetailsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let data = self.data as? [String:Any]{
             
-            if let name = data["name"] as? [String:Any] {
-                print(["name"])
+            if let name = data["name"] as? String {
+                pokemonName.text = name
             }
-            if let height = data["height"] as? [String:Any] {
-                print(["height"])
+            if let height = data["height"] as? String {
+                pokemonHeight.text = height
             }
-            
-            
+            if let weight = data["weight"] as? String {
+                pokemonWeight.text = weight
+            }
         }
         
             

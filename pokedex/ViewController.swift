@@ -17,14 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: "imageTapped:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(gestureRecognizer:)))
         pokemonImage.addGestureRecognizer(tapGesture)
         pokemonImage.isUserInteractionEnabled = true
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func imageTapped(gestureRecognizer: UIGestureRecognizer){
+    @objc func imageTapped(gestureRecognizer: UIGestureRecognizer){
         performSegue(withIdentifier: "detailSegue", sender: nil)
     }
 

@@ -14,6 +14,7 @@
 		AD7262CF20FA6A4400804012 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7262CD20FA6A4400804012 /* LaunchScreen.storyboard */; };
 		AD7262D720FA6E6800804012 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7262D620FA6E6800804012 /* Pokemon.swift */; };
 		ADA2704F2103A52200FFDFC5 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA2704E2103A52200FFDFC5 /* DetailsViewController.swift */; };
+		ADC6926821161FCA00AFFDF6 /* PokemonMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC6926721161FCA00AFFDF6 /* PokemonMoveCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AD7262D020FA6A4400804012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7262D620FA6E6800804012 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		ADA2704E2103A52200FFDFC5 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		ADC6926721161FCA00AFFDF6 /* PokemonMoveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonMoveCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AD7262CD20FA6A4400804012 /* LaunchScreen.storyboard */,
 				AD7262D020FA6A4400804012 /* Info.plist */,
 				AD7262D620FA6E6800804012 /* Pokemon.swift */,
+				ADC6926721161FCA00AFFDF6 /* PokemonMoveCell.swift */,
 			);
 			path = pokedex;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				AD7262C520FA6A4300804012 /* AppDelegate.swift in Sources */,
 				AD7262D720FA6E6800804012 /* Pokemon.swift in Sources */,
 				ADA2704F2103A52200FFDFC5 /* DetailsViewController.swift in Sources */,
+				ADC6926821161FCA00AFFDF6 /* PokemonMoveCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

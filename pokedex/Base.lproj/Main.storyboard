@@ -181,6 +181,13 @@
                                     <outlet property="delegate" destination="A13-U0-xaj" id="8uI-6h-EjS"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nM-pt-SRd">
+                                <rect key="frame" x="78" y="355" width="228" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zeY-xa-3on"/>
@@ -188,6 +195,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ap3-1x-v1J" id="Md1-rV-wFi"/>
                         <outlet property="imagePokemon" destination="9ic-6i-4d1" id="9lt-Bf-5Qn"/>
+                        <outlet property="pokemonChain" destination="0nM-pt-SRd" id="xO3-NR-sxa"/>
                         <outlet property="pokemonHeight" destination="jDf-xd-fdg" id="Un8-eW-otN"/>
                         <outlet property="pokemonName" destination="EW1-jk-JVM" id="Wfd-0g-kbf"/>
                         <outlet property="pokemonTypes" destination="ckv-dN-yhs" id="gRJ-EI-9An"/>

@@ -24,7 +24,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet var pokemonMove2: UILabel!
     @IBOutlet var pokemonMove3: UILabel!
     @IBOutlet var pokemonMove4: UILabel!
+    @IBOutlet var pokemonChain: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
+    
+    var responseJSON:Any?
     
     var moveList:[[String:Any]] = []
     var data: Any?
@@ -127,9 +130,8 @@ class DetailsViewController: UIViewController {
                     }
             }
             if let species = data["species"] as? [[String:Any]] {
-                if let evolutionChain = ["evolution_chain"] as? [[String:Any]]{
-                }
-        }
+                
+            }
 
         }
         
@@ -137,7 +139,26 @@ class DetailsViewController: UIViewController {
 //
 //            }
         }
+    
+    func makeRequest(_ requestURL:String){
+            //
+        let url = URL(string: requestURL)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
         
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else{
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            self.responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            
+        }
+        task.resume()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
